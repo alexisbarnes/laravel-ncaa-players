@@ -15,18 +15,18 @@ class CreatePlayersTable extends Migration
     {
       Schema::create('players', function (Blueprint $table) {
         $table->increments('id');
-        $table->string('first');
-        $table->string('last');
-        $table->integer('gamesPlayed');
-        $table->integer('avgMinutes');
-        $table->integer('ppg');
-        $table->integer('rpg');
-        $table->integer('spg');
-        $table->integer('bpg');
-        $table->integer('tpg');
-        $table->integer('fgPercent');
-        $table->integer('ftPercent');
-        $table->integer('tpPercent');
+        $table->string('first')->default('');
+        $table->string('last')->default('');
+        $table->integer('gamesPlayed')->default(0);
+        $table->integer('avgMinutes')->default(0);
+        $table->integer('ppg')->default(0);
+        $table->integer('rpg')->default(0);
+        $table->integer('spg')->default(0);
+        $table->integer('bpg')->default(0);
+        $table->integer('tpg')->default(0);
+        $table->float('fgPercent', 0, 2)->default(0.00);
+        $table->float('ftPercent', 0, 2)->default(0.00);
+        $table->float('tpPercent', 0, 2)->default(0.00);
       });
     }
 
